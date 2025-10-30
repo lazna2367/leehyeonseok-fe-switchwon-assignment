@@ -79,12 +79,6 @@ src/
 
 `ApiResponse<T>, Order, Wallet, ExchangeRate` 등의 공용 타입을 `src/types/api.ts`에 두었습니다. API 래퍼(`src/api/*.ts`)는 이 타입을 반환하도록 지정해 런타임과 에디터에서 일관성을 보장합니다.
 
-### UI 디테일
-
-- 로그인 에러 문구 영역은 고정 높이로 예약해 버튼 위치가 흔들리지 않습니다.
-- History 테이블은 colgroup + table-fixed로 폭을 고정하고, 한 페이지 10행 기준 높이를 맞춰 페이지 전환 시 점프가 없습니다.
-- 환율 변화율은 소수점 1자리까지 표기하며 0.0%는 숨깁니다.
-
 ## 스크립트
 
 ```bash
@@ -92,15 +86,3 @@ pnpm dev         # 개발 서버
 pnpm build       # 프로덕션 빌드
 pnpm preview     # 빌드 미리보기
 ```
-
-## 개선 아이디어(다음 단계)
-
-- 입력 금액 변경 시 `/orders/quote`를 사용한 실시간 견적 표시(정책/수수료 반영)
-- 토스트 시스템 도입(shadcn toast) + 인터셉터 연동
-- 통화별 소수 제한(USD 2자리 등) 유효성 강화
-- 가벼운 테스트: 환율 보정(JPY 100 → 1엔), 금액 제한 로직
-
----
-
-API 문서: `https://exchange-example.switchflow.biz/swagger-ui/index.html`  
-과제 안내: `https://github.com/Switchwon-Dev/frontend-developer-challenge`
