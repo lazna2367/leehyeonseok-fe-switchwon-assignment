@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <title>switchwon-fe-assignment</title>
+  </head>
+  <body>
+    <script>
+      (function() {
+        document.body.classList.add('font-loading');
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(function() {
+            document.body.classList.remove('font-loading');
+            document.body.classList.add('font-loaded');
+          });
+        } else {
+          // 폰트 API를 지원하지 않는 경우 fallback
+          window.addEventListener('load', function() {
+            setTimeout(function() {
+              document.body.classList.remove('font-loading');
+              document.body.classList.add('font-loaded');
+            }, 100);
+          });
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
